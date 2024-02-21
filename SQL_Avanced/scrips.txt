@@ -1,0 +1,13 @@
+SELECT * FROM user_tables;
+SELECT COUNT(*) FROM concepts;
+SELECT * FROM oehr_employees;
+SELECT employee_id, hire_date,TO_CHAR(hire_date, 'dd') num_days  FROM oehr_employees;
+SELECT employee_id, hire_date FROM oehr_employees;
+
+INSERT INTO num_days (employee_id, num_days)
+SELECT employee_id,
+        TO_CHAR(hire_date, 'dd') num_days
+FROM oehr_employees;
+
+SELECT 'DROP TABLE' || TABLE_NAME||';'
+FROM user_tables;
